@@ -6,89 +6,67 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Please enter your name, gender and ID number");
-        String name = input.nextLine();
-        String gender = input.nextLine();
-        int id = input.nextInt();
+     //   System.out.println("Please enter your name, gender and ID number");
+     //   String name = input.nextLine();
+     //   String gender = input.nextLine();
+     //   int id = input.nextInt();
 
-        System.out.println("Your name is " + name + ", you are " + gender + " and your ID number is " + id + "!");
+     //   System.out.println("Your name is " + name + ", you are " + gender + " and your ID number is " + id + "!");
 
-        // cats
-        System.out.println("Do you have any cats?");
-        while
-            
+        // pets
+        Cat cat = new Cat();
+        Dog dog = new Dog();
 
+        String petName = "";
+        String catOrDog = "";
+        String breed = "";
+        int age = -1;
+
+
+        do {
+            System.out.println("If you have any cats or dogs, please enter his/her name, if not, dont type anything");
+            petName = input.nextLine();
+
+            System.out.println("Is it a dog or a cat?");
+            catOrDog = input.nextLine();
+
+            while (!catOrDog.equals("cat") && !catOrDog.equals("dog")) {  // making sure we have a pet here
+                System.out.println("please tell me again, cat or a dog");
+                catOrDog = input.nextLine();
+
+            }
+
+            System.out.println("Tell me its breed, please!");
+            breed = input.nextLine();
+            System.out.println("How old is your pet?");
+            age = input.nextInt();
+
+            if (catOrDog.equals("cat")) {
+                if (cat.getAge() < age) {
+                    cat.setAge(age);
+                    cat.setBreed(breed);
+                    cat.setName(petName);
+                }
+            }
+
+            if (catOrDog.equals("dog")) {
+                if (dog.getAge() < age) {
+                    dog.setAge(age);
+                    dog.setBreed(breed);
+                    dog.setName(petName);
+                }
+            }
+
+            System.out.println(cat.getName());
+            System.out.println(cat.getAge());
+
+        } while (!petName.equals(""));
+
+        //if (cat.getName() != "")
+
+        
     }
 
 
 }
 
-
-package April25;
-
-public class Dog {
-
-    public String name, breed;
-    public int age;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBreed() {
-        return breed;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-}
-
-
-
-package April25;
-
-public class Cat {
-
-
-    public String name, breed;
-    public int age;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBreed() {
-        return breed;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-
-}
