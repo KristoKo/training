@@ -1,0 +1,20 @@
+package May23.patterns;
+
+public class ChristmasTree {
+
+    public void draw() {
+
+        int n = 8;
+        for (int i = 0; i < n; i++) {
+
+            for (int j = n-1; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+    }
+}
